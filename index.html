@@ -3,19 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
+    <title>Emmanuel Macaire | Data Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f9;
-            padding: 50px;
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --card-bg: #ffffff;
+            --primary-color: #0366d6; /* GitHub Blue */
+            --accent-color: #6a737d;
+            --border-color: #e1e4e8;
+            --academic-bg: #f1f8ff; /* Soft blue tint for academic section */
         }
-        h1 { color: #333; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #24292e;
+            color: #ffffff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            color: #c8e1ff;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(149,157,165,0.2);
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Tech Tags Coloring */
+        .tag-tableau { background-color: #e8f5e9; color: #2e7d32; }
+        .tag-powerbi { background-color: #fffde7; color: #f57f17; }
+        .tag-python { background-color: #e3f2fd; color: #0d47a1; }
+        .tag-academic { background-color: #f3e5f5; color: #4a148c; }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin: 0 0 0.5rem 0;
+            color: #24292e;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: #586069;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover { background-color: #0056b3; }
+
+        .btn-secondary {
+            background-color: #fafbfc;
+            color: #24292e;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover { background-color: #f3f4f6; }
+
+        .academic-section {
+            background-color: var(--academic-bg);
+            margin: 3rem -1rem -2rem -1rem;
+            padding: 3rem 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            border-top: 1px solid var(--border-color);
+            background-color: #ffffff;
+        }
     </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my brand new GitHub Pages website.</p>
+
+    <header>
+        <h1>Emmanuel Macaire</h1>
+        <p>Data Analyst & Analytics Engineer | Portfolio</p>
+    </header>
+
+    <div class="container">
+
+        <h2>📊 Featured Projects</h2>
+        <div class="project-grid">
+
+            <div class="project-card">
+                <div>
+                    <span class="project-tag tag-tableau">Tableau</span>
+                    <h3 class="project-title">World Cup Refereeing Statistics</h3>
+                    <p class="project-description">An interactive dashboard series analyzing historical FIFA World Cup tournament matches to uncover trends in foul density, card distributions, and referee bias across different eras.</p>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary" target="_blank">View Tableau Viz</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <span class="project-tag tag-powerbi">Power BI / DAX</span>
+                    <h3 class="project-title">Advanced Inventory Management Pipeline</h3>
+                    <p class="project-description">Supply chain analytics engine utilizing advanced DAX functions (dynamic safety stock calculators, ABC inventory classification, and reorder point time-intelligence forecasts).</p>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary" target="_blank">View Dashboard</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <span class="project-tag tag-powerbi">Power BI</span>
+                    <h3 class="project-title">Corporate Sales Performance Analytics</h3>
+                    <p class="project-description">A comprehensive enterprise sales dashboard breaking down regional revenue performances, customer lifetime value chunks, and profit margin analysis over multi-year operational cycles.</p>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary" target="_blank">View Dashboard</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">Repository</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <span class="project-tag tag-python">Python / Scikit-Learn</span>
+                    <h3 class="project-title">Predictive Classification Engine</h3>
+                    <p class="project-description">An end-to-end predictive model optimizing patient/gaming cohorts using robust binary classification techniques, detailed hyperparameter tuning, and cross-validation handling.</p>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary" target="_blank">Run Notebook</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">Repository</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="academic-section">
+            <div style="max-width: 1100px; margin: 0 auto;">
+                <h2>🎓 Academic Projects</h2>
+                <div class="project-grid">
+
+                    <div class="project-card">
+                        <div>
+                            <span class="project-tag tag-academic">Academic / Python</span>
+                            <h3 class="project-title">Patient Classification Analysis</h3>
+                            <p class="project-description"><strong>NOVA IMS Lisboa | Data Mining 2</strong><br>An academic research project addressing heavily un-correlated clinical variables. Implemented advanced custom target encodings, feature selection, and model stacking to maximize recall outcomes from low-signal data.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="./notebooks/Classification_data_mining_2.ipynb" class="btn btn-primary">Open Notebook</a>
+                            <a href="./reports/Classification_report_DM2.pdf" class="btn btn-secondary" target="_blank">Read Paper (PDF)</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <span class="project-tag tag-academic">Academic Research</span>
+                            <h3 class="project-title">Secondary Academic Data Thesis</h3>
+                            <p class="project-description"><strong>NOVA IMS Lisboa | Core Curriculum</strong><br>Brief description of your second academic project here. Detail the methodologies applied, core objectives, and your data extraction process.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Project</a>
+                            <a href="#" class="btn btn-secondary" target="_blank">Documentation</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Emmanuel Macaire. Built with HTML & CSS.</p>
+    </footer>
+
 </body>
 </html>
